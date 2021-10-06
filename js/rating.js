@@ -6,12 +6,23 @@ const fifth = document.getElementById('fifth');
 const canvas = document.getElementById('canvas')
 let clicked = false;
 
+const resetStars = () => {
+    first.classList.remove('bi-star-fill');
+    second.classList.remove('bi-star-fill');
+    third.classList.remove('bi-star-fill');
+    fourth.classList.remove('bi-star-fill');
+    fifth.classList.remove('bi-star-fill');
+}
+
 const firstStar = () => {
 
 
     first.addEventListener('mouseover', function (event) {
-        first.classList.remove('bi-star');
-        first.classList.add('bi-star-fill')
+        if (clicked === false) {
+            first.classList.remove('bi-star');
+            first.classList.add('bi-star-fill')
+        }
+
 
     });
     first.addEventListener('mouseout', function (event) {
@@ -21,23 +32,20 @@ const firstStar = () => {
             first.classList.add('bi-star')
         }
 
+
+
     });
 
     first.addEventListener('click', function (event) {
         event.stopPropagation();
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star-fill');
-        third.classList.remove('bi-star-fill');
-        fourth.classList.remove('bi-star-fill');
-        fifth.classList.remove('bi-star-fill');
+        resetStars();
 
         first.classList.add('bi-star-fill');
-        if (clicked === false) {
-            clicked = true;
-        }
-        else {
-            clicked = false;
-        }
+        second.classList.add('bi-star');
+        third.classList.add('bi-star');
+        fourth.classList.add('bi-star');
+        fifth.classList.add('bi-star');
+        clicked = true;
 
     });
 
@@ -47,10 +55,14 @@ const secondStar = () => {
 
 
     second.addEventListener('mouseover', function (event) {
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        first.classList.add('bi-star-fill')
-        second.classList.add('bi-star-fill')
+        if (clicked === false) {
+            first.classList.remove('bi-star');
+            second.classList.remove('bi-star');
+            first.classList.add('bi-star-fill')
+            second.classList.add('bi-star-fill')
+        }
+
+
 
     });
     second.addEventListener('mouseout', function (event) {
@@ -63,24 +75,20 @@ const secondStar = () => {
 
         }
 
+
+
     });
 
     second.addEventListener('click', function (event) {
         event.stopPropagation();
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star-fill');
-        fourth.classList.remove('bi-star-fill');
-        fifth.classList.remove('bi-star-fill');
+        resetStars();
 
         first.classList.add('bi-star-fill');
         second.classList.add('bi-star-fill');
-        if (clicked === false) {
-            clicked = true;
-        }
-        else {
-            clicked = false;
-        }
+        third.classList.add('bi-star');
+        fourth.classList.add('bi-star');
+        fifth.classList.add('bi-star');
+        clicked = true;
 
     });
 
@@ -90,12 +98,15 @@ const thirdStar = () => {
 
 
     third.addEventListener('mouseover', function (event) {
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        first.classList.add('bi-star-fill')
-        second.classList.add('bi-star-fill')
-        third.classList.add('bi-star-fill')
+        if (clicked === false) {
+            first.classList.remove('bi-star');
+            second.classList.remove('bi-star');
+            third.classList.remove('bi-star');
+            first.classList.add('bi-star-fill')
+            second.classList.add('bi-star-fill')
+            third.classList.add('bi-star-fill')
+        }
+
 
     });
     third.addEventListener('mouseout', function (event) {
@@ -114,21 +125,14 @@ const thirdStar = () => {
 
     third.addEventListener('click', function (event) {
         event.stopPropagation();
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        fourth.classList.remove('bi-star-fill');
-        fifth.classList.remove('bi-star-fill');
+        resetStars();
 
         first.classList.add('bi-star-fill');
         second.classList.add('bi-star-fill');
         third.classList.add('bi-star-fill');
-        if (clicked === false) {
-            clicked = true;
-        }
-        else {
-            clicked = false;
-        }
+        fourth.classList.add('bi-star');
+        fifth.classList.add('bi-star');
+        clicked = true;
 
     });
 
@@ -138,14 +142,17 @@ const fourthStar = () => {
 
 
     fourth.addEventListener('mouseover', function (event) {
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        fourth.classList.remove('bi-star');
-        first.classList.add('bi-star-fill')
-        second.classList.add('bi-star-fill')
-        third.classList.add('bi-star-fill')
-        fourth.classList.add('bi-star-fill')
+        if (clicked === false) {
+            first.classList.remove('bi-star');
+            second.classList.remove('bi-star');
+            third.classList.remove('bi-star');
+            fourth.classList.remove('bi-star');
+            first.classList.add('bi-star-fill')
+            second.classList.add('bi-star-fill')
+            third.classList.add('bi-star-fill')
+            fourth.classList.add('bi-star-fill')
+        }
+
 
     });
     fourth.addEventListener('mouseout', function (event) {
@@ -166,22 +173,14 @@ const fourthStar = () => {
 
     fourth.addEventListener('click', function (event) {
         event.stopPropagation();
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        fourth.classList.remove('bi-star');
-        fifth.classList.remove('bi-star-fill');
+        resetStars();
 
         first.classList.add('bi-star-fill');
         second.classList.add('bi-star-fill');
         third.classList.add('bi-star-fill');
         fourth.classList.add('bi-star-fill');
-        if (clicked === false) {
-            clicked = true;
-        }
-        else {
-            clicked = false;
-        }
+        fifth.classList.add('bi-star')
+        clicked = true;
 
     });
 
@@ -190,26 +189,25 @@ const fifthStar = () => {
 
 
     fifth.addEventListener('mouseover', function (event) {
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        fourth.classList.remove('bi-star');
-        fifth.classList.remove('bi-star');
-        first.classList.add('bi-star-fill')
-        second.classList.add('bi-star-fill')
-        third.classList.add('bi-star-fill')
-        fourth.classList.add('bi-star-fill')
-        fifth.classList.add('bi-star-fill')
+        if (clicked === false) {
+            first.classList.remove('bi-star');
+            second.classList.remove('bi-star');
+            third.classList.remove('bi-star');
+            fourth.classList.remove('bi-star');
+            fifth.classList.remove('bi-star');
+            first.classList.add('bi-star-fill')
+            second.classList.add('bi-star-fill')
+            third.classList.add('bi-star-fill')
+            fourth.classList.add('bi-star-fill')
+            fifth.classList.add('bi-star-fill')
+        }
+
 
     });
     fifth.addEventListener('mouseout', function (event) {
 
         if (clicked === false) {
-            first.classList.remove('bi-star-fill');
-            second.classList.remove('bi-star-fill');
-            third.classList.remove('bi-star-fill');
-            fourth.classList.remove('bi-star-fill');
-            fifth.classList.remove('bi-star-fill');
+            resetStars();
             first.classList.add('bi-star')
             second.classList.add('bi-star')
             third.classList.add('bi-star')
@@ -222,23 +220,14 @@ const fifthStar = () => {
 
     fifth.addEventListener('click', function (event) {
         event.stopPropagation();
-        first.classList.remove('bi-star');
-        second.classList.remove('bi-star');
-        third.classList.remove('bi-star');
-        fourth.classList.remove('bi-star');
-        fifth.classList.remove('bi-star');
+        resetStars();
 
         first.classList.add('bi-star-fill');
         second.classList.add('bi-star-fill');
         third.classList.add('bi-star-fill');
         fourth.classList.add('bi-star-fill');
         fifth.classList.add('bi-star-fill');
-        if (clicked === false) {
-            clicked = true;
-        }
-        else {
-            clicked = false;
-        }
+        clicked = true;
 
     });
 
@@ -248,11 +237,7 @@ canvas.addEventListener('click', function (event) {
 
     event.stopPropagation();
     event.stopImmediatePropagation();
-    first.classList.remove('bi-star-fill');
-    second.classList.remove('bi-star-fill');
-    third.classList.remove('bi-star-fill');
-    fourth.classList.remove('bi-star-fill');
-    fifth.classList.remove('bi-star-fill');
+    resetStars();
 
     first.classList.add('bi-star');
     second.classList.add('bi-star');
