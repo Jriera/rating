@@ -1,0 +1,21 @@
+{
+  "name": "rating",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch sass -o css",
+    "optim-css": "purgecss --css css/custom.css --content index.html -o css/optim-custom.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.2",
+    "bootstrap-icons": "^1.5.0"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "purgecss": "^4.0.3"
+  }
+}
